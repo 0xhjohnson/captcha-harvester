@@ -1,6 +1,6 @@
 {
   "name": "captcha-harvester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node cli to casually harvest captchas from supremenewyork",
   "main": "./src/index.js",
   "repository": "https://github.com/0xhjohnson/captcha-harvester",
