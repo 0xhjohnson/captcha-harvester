@@ -79,7 +79,9 @@ const harvestCaptcha = async captchaBank => {
   // every second check if captcha is expired
   // expired- captcha greater than 1.5 minutes old
   setInterval(() => {
-    map(isCaptchaExpired, captchaBank);
+    if (captchaBank.length > 0) {
+      map(isCaptchaExpired, captchaBank);
+    }
   }, 1000);
 
   page.on('request', req => {
