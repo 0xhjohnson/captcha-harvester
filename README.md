@@ -17,6 +17,7 @@ captcha-harvester spins up a localhost server to harvest captchas from supremene
 Installing from [npm](https://www.npmjs.com/package/captcha-harvester) is the easiest way to get up and running. 
 
 npm: `npm install captcha-harvester -g`
+
 yarn: `yarn global add captcha-harvester`
 
 ### Commands

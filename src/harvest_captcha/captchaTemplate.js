@@ -1,5 +1,5 @@
 const settings = {
-  sitekey: '6LeWwRkUAAAAAOBsau7KpuC9AV-6J8mhw4AjC3Xz',
+  sitekey: '6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF',
 };
 const { sitekey } = settings;
 

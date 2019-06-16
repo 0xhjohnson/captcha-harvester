@@ -14,8 +14,8 @@ const harvestCaptcha = async captchaBank => {
   const options = {
     width: 480,
     height: 750,
-    host: 'http://supremenewyork.com/',
-    sitekey: '6LeWwRkUAAAAAOBsau7KpuC9AV-6J8mhw4AjC3Xz',
+    host: 'https://shop-usa.palaceskateboards.com/',
+    sitekey: '6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF',
   };
 
   const browser = await pptr.launch({
