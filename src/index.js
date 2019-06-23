@@ -32,8 +32,10 @@ program
 
 program
   .command('harvestcaptcha')
+  .option('-s, --set', 'Set different site than supreme')
+  .arguments('[url] [sitekey]')
   .alias('hc')
   .description('Harvest captcha tokens')
-  .action(() => captchaApp());
+  .action((url, sitekey) => captchaApp(url, sitekey));
 
 program.parse(process.argv);

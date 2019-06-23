@@ -6,16 +6,15 @@ import chalkPipe from 'chalk-pipe';
 import { map } from 'ramda';
 import { colors } from '../theme';
 import { restoreCookies } from '../utils';
-import captchaTemplate from './captchaTemplate';
 
 pptr.use(pluginStealth());
 
-const harvestCaptcha = async captchaBank => {
+const harvestCaptcha = async (captchaBank, url, sitekey) => {
   const options = {
     width: 480,
     height: 750,
-    host: 'https://shop-usa.palaceskateboards.com/',
-    sitekey: '6LeoeSkTAAAAAA9rkZs5oS82l69OEYjKRZAiKdaF',
+    host: url,
+    sitekey,
   };
 
   const browser = await pptr.launch({
@@ -83,6 +82,35 @@ const harvestCaptcha = async captchaBank => {
       map(isCaptchaExpired, captchaBank);
     }
   }, 1000);
+
+  const captchaTemplate = `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Captcha Harvester</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <style>
+      .flex {
+        display: flex;
+      }
+      .justify-center {
+        justify-content: center;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .mt-6 {
+        margin-top: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex justify-center items-center mt-6">
+      <div id="captchaFrame" class="g-recaptcha" data-callback="sendCaptcha" data-sitekey=${options.sitekey} data-theme="dark"></div>
+    </div>
+  </body>
+  </html>
+  `;
 
   page.on('request', req => {
     if (req.url() === options.host) {

@@ -6,13 +6,16 @@ import harvestCaptcha from './harvestCaptcha';
 const app = new Koa();
 const router = new Router();
 
-const captchaApp = async () => {
+const captchaApp = async (
+  url = 'http://supremenewyork.com/',
+  sitekey = '6LeWwRkUAAAAAOBsau7KpuC9AV-6J8mhw4AjC3Xz'
+) => {
   const captchaBank = [];
   const port = 3001;
 
   console.log(`Captcha app listening on port ${port}`);
 
-  await harvestCaptcha(captchaBank);
+  await harvestCaptcha(captchaBank, url, sitekey);
 
   router.get('/fetch', koaBody(), ctx => {
     ctx.request.body = captchaBank;
