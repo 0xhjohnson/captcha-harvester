@@ -3,10 +3,10 @@
 [![Install Size][size]][size-url]
 [![Downloads][downloads]][downloads-url]
 
-- [About](#about)
-  - [How to install](#how-to-install)
-  - [Commands](#commands)
-- [Getting started](#getting-started)
+- [About](#About)
+  - [How to install](#How-to-install)
+  - [Commands](#Commands)
+- [Getting started](#Getting-started)
 
 ## About
 
@@ -27,7 +27,7 @@ captcha-harvester supports a few commands to make things easy.
 - `captcha-harvester -h|--help` - Returns all available commands.
 - `captcha-harvester init|initialize` - Initialize captcha preferences.
 - `captcha-harvester sg|setgoogle` - Set Google account to be used.
-- `captcha-harvester hc|harvestcaptcha` - Starts localhost server to harvest captcha tokens.
+- `captcha-harvester hc|harvestcaptcha --set [url] [sitekey]` - Starts localhost server to harvest captcha tokens.
 
 ## Getting started
 
